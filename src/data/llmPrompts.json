@@ -1,0 +1,39 @@
+{
+  "hukuk_searchTerm": "Düğünde takılan ziynet eşyalarının boşanma sonrası paylaşımı",
+  "ceza_searchTerm": "Yapılan kaba üst aramasında şahsın üzerinden 1 adet MKE83 ibareli ... namlulu silaha ait dolu fişek, 1 adet 9 mm MKE yapımı dolu fişek ve 14 adet KSC markalı ... sıkı fişek bulunmuştur.",
+  "prompt": "Sen, Türk hukuk kararlarına yönelik semantic search modelleri için çeşitli kullanıcı arama terimlerini parçalara bölmek ve eksik kısımları tahmin etmekle görevlendirilmiş bir asistansın. Verilen bir hukuki arama terimi için görevin, aşağıdaki şemaya uygun yanıt dönmektir. Arama teriminde şemanın bazı alanları ile ilgili bilgi yoksa, boş bırakabilirsin. Yanıtlarını her zaman JSON olarak ver.",
+  "hukuk_schema": {
+    "dava_türü": {
+      "type": "string",
+      "description": "Davanın hukuki niteliğini belirten kategori. Örneğin: 'Tazminat davası', 'Boşanma davası', 'İşe iade davası'. Dava türünü, hukukçuların arayabileceği en yaygın terimlerle ifade et."
+    },
+    "davanın_konusu": {
+      "type": "string",
+      "description": "Arama teriminde davanın özünü oluşturan hukuki uyuşmazlığı veya davaya konu olan olayı kısaca özetle. Soru cümlesi kullanma. Şahıs ve konum isimlerini ve tarihleri sansürle. Örnekler: 'Davacı erkek, kadının evlilik birliğini temelinden sarsıcı davranışlarda bulunduğunu, evlilik birliğinin taraflardan beklenemeyecek seviyede temelinden sarsıldığını, kadının evlilik birliğini temelinden sarsıcı davranışlarda bulunduğunu, kadının zina eylemi gerçekleştirdiğini iddia ederek boşanma talebinde bulunmuştur. Davalı kadın, boşanma talebine karşı çıkmış ve erkeğin de evlilik birliğini temelinden sarsıcı davranışlarda bulunduğunu iddia etmiştir.', 'Tapu kaydının hatalı oluşması nedeniyle uğranılan zararın tazmini istemine ilişkindir.', 'Davacı, 25738 ada 6 parsel ... taşınmazın kendi fiili kullanımında olduğunu belirterek adına şerh verilmesini istemektedir.'"
+    },
+    "yerel_mahkeme_kararı_ve_gerekçesi": {
+      "type": "string",
+      "description": "Varsa arama teriminde istenen yerel mahkeme kararını ve gerekçesini belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın."
+    },
+    "temyiz_değerlendirmesi_ve_gerekçesi": {
+      "type": "string",
+      "description": "Varsa arama teriminde istenen yargıtay değerlendirmesini ve gerekçesini belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın."
+    },
+    "yargıtay_kararı": {
+      "type": "string",
+      "description": "Varsa arama teriminde istenen yargıtay kararını belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın."
+    },
+    "hukuki_ilke": {
+      "type": "string",
+      "description": "Arama terimini ilgilendirebilecek temel hukuki ilkeyi bir cümle ile belirt. Örnekler: 'Temyiz incelemesinin duruşmalı yapılması, her durumda adil yargılanma hakkının bir gereği değildir; dosya üzerinden yapılan inceleme de belirli koşullarda yeterli kabul edilebilir.', 'İşçi muaccel alacaklarını tek tek belirtmek kaydıyla ihtarname ile işvereni temerrüde düşürebilir.', 'Satış vaadi sözleşmesinden kaynaklanan tapu iptali ve tescil davalarının kabulü için aranacak husus, sözleşmenin ifa olanağının bulunup bulunmadığı olabilir.' "
+    }
+  },
+  "ceza_schema": {
+	"suç": "Arama terimindeki suçu belirt. Bu alan, hangi suç(lar) hakkında arama yapıldığını belirtir.",
+    "olay_özeti":"Suç oluşturan olayın ve olguların kısa bir özeti.",
+    "yerel_mahkeme_kararı_ve_gerekçesi": "Varsa arama teriminde istenen yerel mahkeme kararını ve gerekçesini belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın.",
+    "temyiz_değerlendirmesi_ve_gerekçesi": "Varsa arama teriminde istenen yargıtay değerlendirmesini ve gerekçesini belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın.",
+    "yargıtay_kararı": "Varsa arama teriminde istenen yargıtay kararını belirt. Verilen arama teriminde bu bölüm belirtilmemişse boş kalsın.",
+    "hukuki_ilke": "Arama terimini ilgilendirebilecek temel hukuki ilkeyi bir cümle ile belirt. Örnek: 'Failin suç konusu maddenin niteliğini bilmemesi, kastını ortadan kaldırmaz ve ceza sorumluluğunu etkilemez.', 'Yargılama sürecindeki usuli işlemlerin kanuna uygun olarak yapılması gerekmektedir.', 'Suçtan doğrudan zarar gören kurumun, kamu davasında katılan sıfatına sahip olduğu ve temyize hak yetkisinin bulunduğu' "
+  }
+}
