@@ -114,7 +114,7 @@ const LegalSearchInterface = () => {
     <Center>
       <Box className="container" mx="auto" p={50} width="50%">
         <Heading className="text-xl font-bold mb-4" mb={4}>
-          Karar Arama Test Arayüzü
+          Veysel'in LLM Zamazingosu
         </Heading>
         <VStack spacing={4}  mb={4}>
           <Textarea
@@ -153,7 +153,7 @@ const LegalSearchInterface = () => {
 
         <HStack spacing={4} mb={4} justifyContent="center">
           <Button onClick={handleSimpleSearch} isLoading={loading}>
-            {loading ? "Aranıyor..." : "Ara"}
+            {loading ? "Gönderiyor..." : "Gönder"}
           </Button>
           <Button variant="outline" onClick={resetSimpleSearch}>
             Sıfırla
@@ -185,9 +185,9 @@ const LegalSearchInterface = () => {
         </VStack>
         <Box mt={8}>
           <Heading size="md" mb={4}>
-            Arama Sonuçları
+            LLM Outputs
           </Heading>
-          {loading && <p>Kararlar yükleniyor...</p>}
+          {loading && <p>LLM'den yanıt alınıyor...</p>}
           {!loading && searchResults.length > 0
             ? searchResults.map((result, index) => (
                 <Card key={index} mb={4}>
